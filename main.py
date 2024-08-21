@@ -108,6 +108,10 @@ import io
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Skinalyze API is running."}
+
 # Load models
 try:
     acne_model = load_model("models/AcneDetection.h5")
