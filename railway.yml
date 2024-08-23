@@ -1,0 +1,14 @@
+# railway.yml
+
+name: skinalyze-flask
+services:
+  - id: api
+    name: fastapi
+    start: uvicorn app:app --host 0.0.0.0 --port $PORT
+    github:
+      repo: CalDev-id/Skinalyze-Flask
+      branch: main  # Ganti dengan branch yang sesuai jika tidak menggunakan main
+    env:
+      PYTHON_VERSION: "3.9"
+    buildCommand: pip install -r requirements.txt
+    runCommand: uvicorn main:app --host
