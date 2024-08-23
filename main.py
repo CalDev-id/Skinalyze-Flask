@@ -110,11 +110,11 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Skinalyze API is running."}
+    return {"message": "Skinalyze API is running v23 aug."}
 
 # Load models
 try:
-    acne_model = load_model("models/AcneDetection.h5")
+    acne_model = load_model("models/acne23augv1.h5")
     comedo_model = load_model("models/ComedoDetection_v2.h5")
     acne_level_model = load_model("models/AcneLVL_v2baru.h5")
 except Exception as e:
